@@ -963,7 +963,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	line-height: 2.4rem;
 }
 .skill-bars li .progress {
-	background: #313131;
+	background: #ffae00;
 	position: relative;
 	height: 100%;
 }
@@ -1491,8 +1491,8 @@ header .logo a {
  */
 #about {
 	background: #FFFFFF;
-	padding-top: 12rem;
-	padding-bottom: 15rem;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
 }
 #about .section-intro {
 	margin-bottom: 3rem;
