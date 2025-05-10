@@ -26,8 +26,63 @@
 
 	<!-- script
    ================================================== -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			function pluralize(value, unit) {
+				return `${value} ${unit}${value !== 1 ? 's' : ''}`;
+			}
+
+			function calculateYMD(startDate, endDate = new Date()) {
+				const start = new Date(startDate);
+				const end = new Date(endDate);
+
+				let years = end.getFullYear() - start.getFullYear();
+				let months = end.getMonth() - start.getMonth();
+				let days = end.getDate() - start.getDate();
+
+				if (days < 0) {
+					months -= 1;
+					const prevMonthDays = new Date(end.getFullYear(), end.getMonth(), 0).getDate();
+					days += prevMonthDays;
+				}
+
+				if (months < 0) {
+					years -= 1;
+					months += 12;
+				}
+
+				return [
+					years ? pluralize(years, "year") : '',
+					months ? pluralize(months, "month") : '',
+					days ? pluralize(days, "day") : ''
+				].filter(Boolean).join(" ");
+			}
+
+			const expSolution = calculateYMD("2019-05-15", "2019-12-13");
+			const expPlanetNine = calculateYMD("2019-12-15");
+
+			// Combine total days from both experiences
+			const daysSolution = Math.floor((new Date("2019-12-13") - new Date("2019-05-15")) / (1000 * 60 * 60 * 24));
+			const daysPlanet = Math.floor((new Date() - new Date("2019-12-15")) / (1000 * 60 * 60 * 24));
+			const totalDays = daysSolution + daysPlanet;
+
+			const totalYears = Math.floor(totalDays / 365.25);
+			const totalMonths = Math.floor((totalDays % 365.25) / 30.4375);
+			const remainingDays = Math.floor(totalDays - (totalYears * 365.25 + totalMonths * 30.4375));
+
+			const expTotal = [
+				totalYears ? pluralize(totalYears, "year") : '',
+				totalMonths ? pluralize(totalMonths, "month") : '',
+				remainingDays ? pluralize(remainingDays, "day") : ''
+			].filter(Boolean).join(" ");
+
+			// Output
+			$("#exp-total").text(expTotal);
+		});
+	</script>
 
 	<!-- favicons
 	================================================== -->
@@ -175,26 +230,19 @@
 				<div class="technical-skills">
 					<h3>Languages</h3>
 					<ul style="list-style: none; padding-left: 0; margin: 0;">
-						<li style="margin-top: 1rem;">Chakma – Native (Mother Tongue)</li>
-						<li style="margin-top: 1rem;">Bengali – Native/Fluent
+						<li style="margin-top: 1rem;"><strong>Chakma</strong>– Native (Mother Tongue)</li>
+						<li style="margin-top: 1rem;"><strong>Bengali</strong> – Native/Fluent
 						</li>
-						<li style="margin-top: 1rem;">English - Fluent</li>
-						<li style="margin-top: 1rem;">Hindi – Conversational
+						<li style="margin-top: 1rem;"><strong>English</strong> - Fluent</li>
+						<li style="margin-top: 1rem;"><strong>Hindi</strong> – Conversational
 						</li>
-						<li style="margin-top: 1rem;">Swedish – Learning Phase
+						<li style="margin-top: 1rem;"><strong>Swedish</strong> – Learning Phase
 						</li>
 					</ul>
 				</div>
 
 			</div>
 
-		</div>
-
-		<div class="row button-section">
-			<div class="col-twelve">
-				<a href="https://govindaroyaiub.github.io/get-to-know-me/files/Govinda_Roy_Resume.pdf" target="_blank"
-					class="button button-primary">Download CV</a>
-			</div>
 		</div>
 
 	</section> <!-- /process-->
@@ -217,7 +265,7 @@
 			<div class="col-twelve resume-header">
 
 				<h2>Work Experiences</h2>
-				<h4>Total Work Experience: 5 Years+</h4>
+				<h4>Total Work Experience: <span id="exp-total"></span></h4>
 
 			</div> <!-- /resume-header -->
 
@@ -347,6 +395,16 @@
 
 		</div> <!-- /resume-timeline -->
 
+		<div class="row button-section">
+			<div class="col-twelve">
+				<a id="download-btn" href="#" target="_blank" class="button button-primary">Download CV</a>
+
+				<p id="thank-you-message" class="thank-you-message">
+					🎉 Thank you and let's talk soon!
+				</p>
+			</div>
+		</div>
+
 	</section> <!-- /features -->
 
 	<!-- services Section
@@ -450,6 +508,25 @@
 		const d = new Date();
 		let year = d.getFullYear();
 		document.getElementById("getYear").innerHTML = year;
+	</script>
+
+	<script>
+		document.getElementById('download-btn').addEventListener('click', function (e) {
+			e.preventDefault();
+
+			const msg = document.getElementById('thank-you-message');
+
+			// Show message with animation
+			msg.style.display = 'block';
+			msg.style.opacity = 0;
+			msg.style.animation = 'fadeIn 0.6s ease-in-out forwards';
+
+			// Open CV after delay and hide message
+			setTimeout(() => {
+				window.open("https://govindaroyaiub.github.io/get-to-know-me/files/Govinda_Roy_Resume.pdf", "_blank");
+				msg.style.display = 'none'; // Hide after opening
+			}, 2000);
+		});
 	</script>
 
 </body>

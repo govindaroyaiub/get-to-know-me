@@ -1655,14 +1655,14 @@ header .logo a {
 	text-transform: uppercase;
 	letter-spacing: .25rem;
 	border-radius: 15px;
-	background-color: #008bcc!important;
+	background-color: #008bcc !important;
 }
 
 .intro-content .button:hover,
 .intro-content .button:focus {
 	border-color: white;
-	background-color: white!important;
-	color: black!important;
+	background-color: white !important;
+	color: black !important;
 }
 
 .intro-content .button::after {
@@ -3081,3 +3081,23 @@ footer .copyright span:last-child::after {
 
 /*# sourceMappingURL=main.css.map */
 
+.thank-you-message {
+	display: none;
+	margin-top: 1.5rem;
+	font-weight: 600;
+	color: white;
+	text-align: center;
+	font-size: 2.5rem;
+	background-color: #008bcc;
+	padding: 1.5rem 1.5rem;
+	border-radius: 15px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	animation: fadeIn 0.6s ease-in-out forwards;
+	opacity: 0;
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
