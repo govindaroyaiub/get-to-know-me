@@ -1512,25 +1512,33 @@ header .logo a {
  */
 @media only screen and (max-width:1024px) {
 	header .top-bar {
-		left: 60px;
+		right: 0;
+		margin-top: 1rem;
 	}
 }
 
 @media only screen and (max-width:768px) {
 	header .top-bar {
-		left: 50px;
+		right: 0;
+		margin-top: 1rem;
 	}
 }
 
 @media only screen and (max-width:600px) {
 	header .top-bar {
-		left: 35px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		margin-top: 1rem;
 	}
 }
 
 @media only screen and (max-width:400px) {
 	header .top-bar {
-		left: 25px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		margin-top: 1rem;
 	}
 }
 
@@ -2654,7 +2662,7 @@ header .logo a {
  */
 #contact {
 	background: #151515;
-	padding-top: 12rem;
+	padding-top: 0;
 	padding-bottom: 7.2rem;
 }
 
@@ -2860,7 +2868,7 @@ header .logo a {
 }
 
 .contact-info .icon i {
-	font-size: 4.2rem;
+	font-size: 3.5rem;
 	color: #FFFFFF;
 }
 
