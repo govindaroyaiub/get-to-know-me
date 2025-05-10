@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Title -->
+    <title>DEKA</title>
+
+    <!--META TAG-->
+    <meta name="ad.size" content="width=300,height=250">
+
+    <!--CUSTOM STYLE-->
+    <link rel="stylesheet" href="css/style.css">
+
+<body onload="myFunc()">
+
+    <div id="banner">
+        <img src="assets/bg.png" alt="bg" id="bg">
+        <img src="assets/spaar.png" alt="spaar" id="spaar" class="spaarkeuk">
+        <img src="assets/joseph.png" alt="joseph" id="joseph">
+        <img src="assets/keuk.png" alt="keuk" id="keuk" class="spaarkeuk">
+
+        <img src="assets/f1_tool1.png" alt="f1_tool1" id="f1_tool1" class="f1_tools">
+        <img src="assets/f1_tool2.png" alt="f1_tool2" id="f1_tool2" class="f1_tools">
+        <img src="assets/f1_tool3.png" alt="f1_tool3" id="f1_tool3" class="f1_tools">
+        <img src="assets/f1_tool4.png" alt="f1_tool4" id="f1_tool4" class="f1_tools">
+        <img src="assets/f1_tool5.png" alt="f1_tool5" id="f1_tool5" class="f1_tools">
+
+        <img src="assets/f2_tool1.png" alt="f2_tool1" id="f2_tool1" class="f2_tools">
+        <img src="assets/f2_tool2.png" alt="f2_tool2" id="f2_tool2" class="f2_tools">
+        <img src="assets/f2_tool3.png" alt="f2_tool1" id="f2_tool3" class="f2_tools">
+
+        <img src="assets/f4_tool1.png" alt="f4_tool1" id="f4_tool1" class="f4_tools">
+        <img src="assets/f4_tool2.png" alt="f4_tool2" id="f4_tool2" class="f4_tools">
+        <img src="assets/f4_tool3.png" alt="f4_tool3" id="f4_tool3" class="f4_tools">
+        <img src="assets/f4_tool4.png" alt="f4_tool4" id="f4_tool4" class="f4_tools">
+
+        <img src="assets/cta.png" alt="cta" id="cta">
+
+        <div id="yellow_bar"></div>
+        <img src="assets/korting_text.png" alt="korting_text" id="korting_text">
+        <img src="assets/korting.png" alt="korting" id="korting">
+
+        <img src="assets/markt_logo.png" alt="markt_logo" class="markt_logo dekaLogo">
+        <img src="assets/deka_logo.png" alt="deka_logo" class="deka_logo dekaLogo">
+        <img src="assets/logo.png" alt="logo" class="logo">
+    </div>
+        
+        <!--END OF /. BANNER-->
+
+        <!--CUSTOM SCRIPT-->
+        <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+
+        <script>
+            var t1 = gsap.timeline({ repeat: -1, repeatDelay: 3 });
+            // var t1 = gsap.timeline({});
+
+            function myFunc() {
+                t1
+                    .to('img', 0, { display: 'block' })
+
+                    .add('f1', '+=0.5')
+                    .to('.deka_logo', {duration: 0.5, scale: 1, opacity: 1, ease: 'power3.out'}, 'f1')
+                    .to('.deka_logo', {duration: 0.5, x: 0, opacity: 1, ease: 'power3.out'}, 'f1+=0.5')
+                    .to('.markt_logo', {duration: 0.5, x: 0, opacity: 1, ease: 'power3.out'}, 'f1+=0.5')
+
+                    .to('.deka_logo, .markt_logo', {duration: 0, opacity: 0, display: "none", ease: 'power2.out'}, 'f1+=0.9')
+                    .to('.logo', {duration: 0, opacity: 1, ease: 'power2.out'}, 'f1+=0.9')
+                    .to('.logo', {duration: 0.5, x: -87, y: -86, scale: 0.68, opacity: 1, ease: 'power2.out'}, 'f1+=1')
+
+                    .add('f2')
+                    .to('#joseph', {duration: 0.5, opacity: 1, scale: 1, ease: 'power3.out'}, 'f2')
+                    .to('.spaarkeuk', {duration: 0.5, x: 0, y: 0, opacity: 1, ease: 'power2.out'}, 'f2+=0.25')
+                    .to('.f1_tools', {duration: 0.35, opacity: 1, rotation: 0, stagger: 0.1, ease: 'power2.out'}, 'f2+=0.35')
+
+                    .to('#cta', {duration: 0.5, scale: 1, ease: 'back.out'})
+
+                    .to('#cta', {duration: 0.25, repeat: 3, yoyo: true, scale: 1.05, ease: 'power2.inout'}, '+=0.5')
+
+                    .add('f3')
+                    .to('#f1_tool4', {duration: 0.35, opacity: 0, rotation: 5, ease: 'power2.in'}, 'f3')
+                    .to('#f1_tool5', {duration: 0.35, x: -5, y: 10, ease: 'power2.in'}, 'f3')
+                    .to('.f2_tools', {duration: 0.35, opacity: 1, rotation: 0, stagger: 0.1, ease: 'power2.out'}, 'f3+=0.15')
+                    .to('#cta', {duration: 0.5, scale: 0, ease: 'power3.in'}, 'f3+=0.15')
+
+                    .add('f4')
+                    .to('#korting', {duration: 0.5, scale: 1, opacity: 1, ease: 'back.out'}, 'f4')
+                    .to('#yellow_bar', {duration: 0.5, width: 215, ease: 'none'}, 'f4')
+                    .to('#korting_text', {duration: 0.5, opacity: 1, x: 0, ease: 'power2.out'}, 'f4+=0.35')
+
+                    .to('#korting', {duration: 0.25, repeat: 3, yoyo: true, scale: 1.1, ease: 'power2.inout'}, '+=0.5')
+
+                    .add('f5', '+=2')
+                    .to('#korting', {duration: 0.5, scale: 0, opacity: 0, ease: 'power3.in'}, 'f5+=0.65')
+                    .to('#yellow_bar', {duration: 0.5, width: 0, ease: 'none'}, 'f5+=0.25')
+                    .to('#korting_text', {duration: 0.35, opacity: 0, x: 20, ease: 'power2.in'}, 'f5')
+
+                    .to('.f1_tools, .f2_tools', {duration: 0.5, opacity: 0, rotation: 10, ease: 'power2.in'}, "+=0.15")
+                    .to('.f4_tools', {duration: 0.35, opacity: 1, rotation: 0, stagger: 0.1, ease: 'power2.out'})
+                    .to('#cta', {duration: 0.5, scale: 1, ease: 'back.out'})
+
+                    .to('#cta', {duration: 0.25, repeat: 3, yoyo: true, scale: 1.05, ease: 'power2.inout'}, '+=0.5')
+
+            }
+
+        </script>
+        <!-- DCM Code -->
+        <script type="text/javascript">
+            var clickTag = "https://www.dekamarkt.nl/josephjoseph";
+            var banner = document.getElementById("banner");
+            banner.style.cursor = "pointer";
+
+            banner.addEventListener("click", goURL);
+
+
+            function goURL() {
+                window.open(clickTag);
+            }
+
+
+        </script>
+
+
+</body>
+
+</html>

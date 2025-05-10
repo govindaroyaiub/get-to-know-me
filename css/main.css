@@ -2483,12 +2483,12 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #services {
-	background: #313131 url(../images/bg.jpg) no-repeat center;
+	/* background: #313131 url(../images/bg.jpg) no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	background-size: cover;
-	padding-top: 12rem;
-	padding-bottom: 12rem;
+	background-size: cover; */
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 	color: white;
 	position: relative;
 }
@@ -3100,4 +3100,62 @@ footer .copyright span:last-child::after {
 	to {
 		opacity: 1;
 	}
+}
+
+#services{
+	width: 100%;
+	background-color: white;
+}
+
+.banner-showcase {
+	max-width: 360px;
+	margin: 2rem auto;
+	text-align: center;
+	padding: 0 1rem;
+	font-family: "Segoe UI", sans-serif;
+}
+
+.banner-showcase h2 {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+	color: #333;
+}
+
+.banner-block {
+	margin-bottom: 3rem;
+	border: 1px solid #ddd;
+	padding: 1rem;
+	border-radius: 8px;
+	background-color: #fafafa;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.caption {
+	margin-top: 0.75rem;
+	font-size: 0.95rem;
+	color: #666;
+}
+
+.banner-carousel {
+	max-width: 400px;
+	margin: 2rem auto;
+	text-align: center;
+	font-family: "Segoe UI", sans-serif;
+	background-color: white;
+}
+
+.swiper-slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.caption {
+	margin-top: 0.75rem;
+	font-size: 0.95rem;
+	color: #666;
+}
+
+.swiper-pagination{
+	display: none;
 }

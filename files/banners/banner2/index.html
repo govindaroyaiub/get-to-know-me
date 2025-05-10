@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Title -->
+    <title>DIRK</title>
+
+    <!--META TAG-->
+    <meta name="ad.size" content="width=300,height=250">
+
+    <!--CUSTOM STYLE-->
+    <link rel="stylesheet" href="css/style.css">
+
+<body>
+
+    <div id="banner">
+        <div id="red_bg"></div>
+        <div id="f1_texts">
+            <img src="assets/f1_text1.png" alt="f1_text1" id="f1_text1" class="f1_texts">
+            <img src="assets/f1_text2.png" alt="f1_text2" id="f1_text2" class="f1_texts">
+        </div>
+
+        <img src="assets/logo2.png" alt="logo1" id="logo2" class="logo">
+        
+        <img src="assets/sticker11.png" alt="sticker11" class="stickers1" id="sticker11">
+        <img src="assets/mobile.png" alt="mobile" id="mobile">
+        <img src="assets/sticker12.png" alt="sticker12" class="stickers1" id="sticker12">
+        <img src="assets/sticker13.png" alt="sticker13" class="stickers1" id="sticker13">
+        
+        <div class="folders">
+            <img src="assets/folder3.png" alt="folder3" id="folder3">
+            <img src="assets/folder2.png" alt="folder2" id="folder2">
+            <img src="assets/folder1.png" alt="folder1" id="folder1">
+        </div>
+        <img src="assets/cta_gif.gif" alt="cta" id="cta">
+        <img src="assets/sticker21.png" alt="sticker21" class="stickers2" id="sticker21">
+        <img src="assets/sticker22.png" alt="sticker22" class="stickers2" id="sticker22">
+        <img src="assets/sticker23.png" alt="sticker23" class="stickers2" id="sticker23">
+    </div>
+        <!--END OF /. BANNER-->
+
+        <!--CUSTOM SCRIPT-->
+        <script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.5.1_min.js"></script>
+
+        <script>
+            var banner = document.getElementById('banner');
+            var masterTimeline = gsap.timeline({paused:true});
+
+            gsap.set(['svg', 'div'], {force3D: true, rotation: 0.025});
+            gsap.set('#folder1', {transformOrigin: "30px 238px"})
+            gsap.set('#folder2', {transformOrigin: "30px 238px", scaleX: 0})
+            gsap.set('#folder3', {transformOrigin: "30px 238px"})
+            // gsap.set('#folder4', {transformOrigin: "30px 238px", scaleX: 0})
+
+            function myFunction() {
+                var tlHover = gsap.timeline({paused:true});
+
+                tlHover
+                .add('hover')
+                .to('#folder1', {duration: 0.8, scaleX: 0.75, skewY: -10, ease:"power2.in"}, "hover")
+                .to('.folders', {duration: 0.8, x: -3, y: 10, scale: 0.95, ease:"power2.inOut"}, "hover")
+
+
+                banner.onmouseover = function () {
+                    tlHover.play();
+                };
+                banner.onmouseout = function() {
+                    tlHover.reverse();
+                };
+                banner.ontouchstart = function () {
+                    tlHover.play();
+                };
+                banner.ontouchend = function() {
+                    tlHover.reverse();
+                };
+                
+            }
+
+            function showFrameOneTexts(){
+                var tl = gsap.timeline();
+
+                tl
+                .to('img', 0, { display: 'block' })
+
+                .to('.f1_texts', { duration: 0.75, y: 0, opacity: 1, stagger: 0.1, ease: 'back.out'}, '+=0.25')
+
+                return tl;
+            }
+
+            function showFolder(){
+                var tl = gsap.timeline();
+
+                tl
+                .add('minimize', '+=0.5')
+                .to('#f1_text1', { duration: 0.5, y: -92, scale: 0.925, ease: 'none'}, 'minimize')
+                .to('#f1_text2', { duration: 0.5, y: -94, scale: 0.925, ease: 'none'}, 'minimize')
+                .to('#red_bg', {duration: 0.5, height: 64, ease: 'none'}, 'minimize')
+                .to('#mobile', {duration: 0.85, y: 0, ease: 'power2.out'}, 'minimize+=0.25')
+                .to('.folders', {duration: 0.85, y: 0, opacity: 1, ease: 'power2.out'}, 'minimize+=0.25')
+                .to('.stickers1', {duration: 0.5, scale: 1, stagger: 0.1, ease: 'power2.out'})
+
+                return tl;
+            }
+
+            function moveMobile(){
+                var tl = gsap.timeline();
+
+                tl
+                .to('.stickers1', {duration: 0.5, scale: 0, stagger: -0.15, ease: 'power2.in'}, 'move+=0.25')
+                .to('#mobile', {duration: 0.5, x: -70, ease: 'none'}, 'move+=0.25')
+                .to('.folders', {duration: 0.5, x: 0, ease: 'none'}, 'move+=0.25')
+                .to('.logo', {duration: 0.5, opacity: 1, ease: 'power2.out'}, 'move+=0.5')
+                .to('#cta', {duration: 0.5, scale: 1, ease: 'back.out'})
+
+                return tl;
+            }
+
+            function openAndCloseFolder() {
+                var tl = gsap.timeline({onComplete: myFunction});
+
+                tl
+                .add('open')
+                .to('#folder1', {duration: 0.8, scaleX: 0.75, skewY: -10, ease:"power2.in"}, "open")
+                .to('#folder1', {duration: 0.8, scaleX: 1, skewY: 0, ease:"power2.out"}, '+=0.25')
+                .to('.folders', {duration: 0.8, x: -3, y: 10, scale: 0.95, ease:"power2.inOut"}, "open")
+                .to('.folders', {duration: 0.5, x: 0, y: 0, scale: 1, ease:"power2.in"}, "open+=1.25")
+                .to('.stickers2', {duration: 0.5, scale: 1, stagger: 0.1, ease: 'power2.out'})
+
+                return tl;
+            }
+
+            masterTimeline.add(showFrameOneTexts(), 0)
+            masterTimeline.add(showFolder())
+            masterTimeline.add(moveMobile(), "+=0.25")
+            masterTimeline.add(openAndCloseFolder(), "+=0.25")
+
+            window.onload = function() {
+                masterTimeline.play();
+            }
+
+        </script>
+
+        <!-- DCM Code -->
+        <script type="text/javascript">
+            var clickTag = "http://dirk.nl/folder";
+            var banner = document.getElementById("banner");
+            banner.style.cursor = "pointer";
+
+            banner.addEventListener("click", goURL);
+
+
+            function goURL() {
+                window.open(clickTag);
+            }
+        </script>
+</body>
+</html>

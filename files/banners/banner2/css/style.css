@@ -1,0 +1,167 @@
+/*<!--*/
+/*# Name: Banner CSS*/
+/*# Banner Creator: Diva World Wide*/
+/*# Website: www.divaww.com*/
+/*-->*/
+
+
+body,
+html{
+    width: 300px;
+    height: 250px;
+}
+
+body{
+    margin: 0;
+}
+
+img{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 300px;
+    height: 250px;
+    display: block;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+
+#banner{
+    position: relative;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid #d0d0d0ab;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: white;
+}
+
+.f1_texts{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform-origin: center;
+}
+
+#f1_text1{
+    top: 102px;
+    width: 227px;
+    height: 22px;
+}
+
+#f1_text2{
+    top: 127px;
+    width: 246px;
+    height: 22px;
+}
+
+.logo{
+    opacity: 0;
+}
+
+#cta{
+    position: absolute;
+    top: 144px;
+    left: 160px;
+    width: 128px;
+    height: auto;
+    transform-origin: center;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.folders{
+    transform: translate(70px, 200px);
+    -webkit-transform: translate(70px, 200px);
+    -moz-transform: translate(70px, 200px);
+    -ms-transform: translate(70px, 200px);
+    -o-transform: translate(70px, 200px);
+}
+
+#whatsapp{
+    transform-origin: 225px 137px;
+    opacity: 0;
+    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
+}
+
+#red_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 336px;
+    height: 280px;
+    background: #e30612;
+}
+
+#mobile{
+    transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+    -moz-transform: translateY(200px);
+    -ms-transform: translateY(200px);
+    -o-transform: translateY(200px);
+}
+
+#sticker11{
+    transform-origin: 48px 151px;
+}
+
+#sticker12{
+    transform-origin: 251px 120px;
+}
+
+#sticker13{
+    transform-origin: 249px 210px;
+}
+
+.stickers1{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+#sticker21{
+    transform-origin: 22px 173px;
+}
+
+#sticker22{
+    transform-origin: 150px 114px;
+}
+
+#sticker23{
+    transform-origin: 150px 208px;
+}
+
+.stickers2{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
