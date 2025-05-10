@@ -1866,12 +1866,13 @@ header .logo a {
 .button-section [class*="col-"] .button:first-child {
 	margin-right: 4rem;
 	border-radius: 15px;
-	border: 1px solid black;
+	background-color: #008bcc;
+	border: 1px solid #008bcc;
 }
 
 .button-section [class*="col-"] .button:first-child:hover {
 	background-color: white;
-	color: black;
+	color: #008bcc;
 	border: 1px solid #008bcc;
 }
 
